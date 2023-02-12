@@ -24,14 +24,14 @@ public class Oca {
 			pista += "\t";
 			// System.out.print("\t");
 		}
-		pista += "J1";
+		pista += "J1\n";
 		// System.out.println("J1");
 
 		for (int i = 1; i <= fichaJ2; i++) {
 			pista += "\t";
 //			System.out.print("\t");
 		}
-		pista += "J2";
+		pista += "J2\n";
 //		System.out.println("J2");
 		return pista;
 	}
@@ -58,13 +58,13 @@ public class Oca {
 
 		if (fichaJ1 > fichaJ2) {
 //			System.out.println("Va ganando " + nomJ1);
-			ganador += "Va ganando " + nomJ1;
+			ganador += "Va ganando " + nomJ1 + "\n";
 		} else if (fichaJ2 > fichaJ1) {
 //			System.out.println("Va ganando " + nomJ2);
-			ganador += "Va ganando " + nomJ2;
+			ganador += "Va ganando " + nomJ2 + "\n";
 		} else {
 //			System.out.println("VAN EMPATADOS");
-			ganador += "VAN EMPATADOS";
+			ganador += "VAN EMPATADOS" + "\n";
 		}
 		return ganador;
 	}
