@@ -14,25 +14,19 @@ public class Oca {
 		String pista = "";
 		for (int i = 1; i <= TAMCIRCUITO; i++) {
 			pista += "\t" + i;
-			// System.out.print("\t" + i);
 		}
 
 		pista += "\n";
-//		System.out.println();
 
 		for (int i = 1; i <= fichaJ1; i++) {
 			pista += "\t";
-			// System.out.print("\t");
 		}
 		pista += "J1\n";
-		// System.out.println("J1");
 
 		for (int i = 1; i <= fichaJ2; i++) {
 			pista += "\t";
-//			System.out.print("\t");
 		}
 		pista += "J2\n";
-//		System.out.println("J2");
 		return pista;
 	}
 
@@ -57,13 +51,10 @@ public class Oca {
 		String ganador = "";
 
 		if (fichaJ1 > fichaJ2) {
-//			System.out.println("Va ganando " + nomJ1);
 			ganador += "Va ganando " + nomJ1 + "\n";
 		} else if (fichaJ2 > fichaJ1) {
-//			System.out.println("Va ganando " + nomJ2);
 			ganador += "Va ganando " + nomJ2 + "\n";
 		} else {
-//			System.out.println("VAN EMPATADOS");
 			ganador += "VAN EMPATADOS" + "\n";
 		}
 		return ganador;
