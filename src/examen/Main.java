@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		//int tirada1, tirada2;
+		// int tirada1, tirada2;
 		String nomJ1, nomJ2;
 		Oca objeto = new Oca();
 
@@ -29,12 +29,11 @@ public class Main {
 			nomJ2 = lectura.next();
 		}
 
-		
 		while (objeto.esGanador(nomJ1, nomJ2).equals("")) {
 			realizarJugada(1, nomJ1, nomJ2);
 			realizarJugada(2, nomJ1, nomJ2);
 		}
-		
+
 		System.out.println("Ha ganado " + objeto.esGanador(nomJ1, nomJ2));
 		lectura.close();
 	}
@@ -43,32 +42,32 @@ public class Main {
 		int tirada1, tirada2;
 		Scanner lectura = new Scanner(System.in);
 		Oca objeto = new Oca();
-		
+
 		System.out.println("Introduzca un carácter para continuar con el juego");
 		lectura.next();
 
 		System.out.println("Juega el jugador " + numJugador);
-		
+
 		tirada1 = Oca.tiraDados();
 		System.out.println("El jugador " + numJugador + " ha sacado en la primera tirada: " + tirada1);
-		
+
 		tirada2 = Oca.tiraDados();
 		System.out.println("El jugador " + numJugador + " ha sacado en la segunda tirada: " + tirada2);
-		
-		if(Oca.sumaDeNumerosEsPrimo(tirada1, tirada2)){
+
+		if (Oca.sumaDeNumerosEsPrimo(tirada1, tirada2)) {
 			System.out.println("¡TIRADA VÁLIDA!");
-			if(numJugador==1) {
-				Oca.fichaJ1 += tirada1+tirada2;
+			if (numJugador == 1) {
+				Oca.fichaJ1 += tirada1 + tirada2;
 			} else {
-				Oca.fichaJ2 += tirada1+tirada2;
+				Oca.fichaJ2 += tirada1 + tirada2;
 			}
 		} else {
 			System.out.println("¡TIRADA NO VÁLIDA! No se suma la tirada");
 		}
-		
-		Oca.pintaPista();
-		objeto.imprimeComoVaLaCarrera(nomJ1, nomJ2);
-		
-		//lectura.close();
+
+		System.out.println(Oca.pintaPista());
+		System.out.println(objeto.imprimeComoVaLaCarrera(nomJ1, nomJ2));
+
+		// lectura.close();
 	}
 }

@@ -2,7 +2,7 @@ package examen;
 
 public class Oca {
 	static final int TAMCIRCUITO = 11;
-	static int fichaJ1=0, fichaJ2=0;
+	static int fichaJ1 = 0, fichaJ2 = 0;
 	static int minDado, maxDado;
 
 	static int tiraDados() {
@@ -10,22 +10,30 @@ public class Oca {
 		return resultado;
 	}
 
-	static void pintaPista() {
+	static String pintaPista() {
+		String pista = "";
 		for (int i = 1; i <= TAMCIRCUITO; i++) {
-			System.out.print("\t" + i);
+			pista += "\t" + i;
+			// System.out.print("\t" + i);
 		}
 
-		System.out.println();
+		pista += "\n";
+//		System.out.println();
 
 		for (int i = 1; i <= fichaJ1; i++) {
-			System.out.print("\t");
+			pista += "\t";
+			// System.out.print("\t");
 		}
-		System.out.println("J1");
+		pista += "J1";
+		// System.out.println("J1");
 
 		for (int i = 1; i <= fichaJ2; i++) {
-			System.out.print("\t");
+			pista += "\t";
+//			System.out.print("\t");
 		}
-		System.out.println("J2");
+		pista += "J2";
+//		System.out.println("J2");
+		return pista;
 	}
 
 	static boolean sumaDeNumerosEsPrimo(int tirada1, int tirada2) {
@@ -45,32 +53,32 @@ public class Oca {
 		return esPrimo;
 	}
 
-	void imprimeComoVaLaCarrera(String nomJ1, String nomJ2) {
+	String imprimeComoVaLaCarrera(String nomJ1, String nomJ2) {
+		String ganador = "";
+
 		if (fichaJ1 > fichaJ2) {
-			System.out.println("Va ganando " + nomJ1);
+//			System.out.println("Va ganando " + nomJ1);
+			ganador += "Va ganando " + nomJ1;
 		} else if (fichaJ2 > fichaJ1) {
-			System.out.println("Va ganando " + nomJ2);
+//			System.out.println("Va ganando " + nomJ2);
+			ganador += "Va ganando " + nomJ2;
 		} else {
-			System.out.println("VAN EMPATADOS");
+//			System.out.println("VAN EMPATADOS");
+			ganador += "VAN EMPATADOS";
 		}
+		return ganador;
 	}
 
 	String esGanador(String nomJ1, String nomJ2) {
 		String ganador = "";
-		
+
 		if (fichaJ1 >= TAMCIRCUITO) {
 			ganador = nomJ1;
 		} else if (fichaJ2 >= TAMCIRCUITO) {
 			ganador = nomJ2;
 		}
-		
+
 		return ganador;
 	}
 
-	public static void main(String[] args) {
-		Oca objeto = new Oca();
-		fichaJ1=3;
-		fichaJ2=11;
-		System.out.println(objeto.esGanador("Pepe", "Juan"));
-	}
 }
